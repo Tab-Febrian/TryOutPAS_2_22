@@ -2,11 +2,7 @@ package com.example.tryoutpas_2_22;
 
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -23,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.frame_layout, new HomeFragment())
+                .replace(R.id.frame_layout, new PremierFragment())
                 .commit();
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
@@ -31,11 +27,11 @@ public class MainActivity extends AppCompatActivity {
             int itemId = item.getItemId();
 
             if (itemId == R.id.nav_home) {
-                fragment = new HomeFragment();
+                fragment = new PremierFragment();
             } else if (itemId == R.id.nav_dashboard) {
-                fragment = new DashboardFragment();
+                fragment = new SpanishFragment();
             } else if (itemId == R.id.nav_notifications) {
-                fragment = new NotificationsFragment();
+                fragment = new CountriesFragment();
             }
 
             if (fragment != null) {
